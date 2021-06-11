@@ -15,6 +15,7 @@ function App() {
   const [isEditing, setisEditing] = useState(false);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const [editId, setEditId] = useState(null);
+  const [status, setStatus] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || name.length === 0) {
@@ -78,7 +79,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List list={list} removeItem={removeItem} editItem={editItem} />
+          <List setStaus={setStaus} list={list} removeItem={removeItem} editItem={editItem} />
           <button
             onClick={() => {
               setList([]);
