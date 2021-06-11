@@ -33,11 +33,11 @@ function App() {
       setisEditing(false);
 
       setEditId(null);
-      showAlert(true, "Items has been Upadated", "success");
+      showAlert(true, "Task has been Upadated", "success");
     } else {
       let newItem = { id: new Date().getTime().toString(), title: name ,status:false };
       setList([...list, newItem]);
-      showAlert(true, "Item has been Added", "success");
+      showAlert(true, "Task has been Added", "success");
       setName("");
     }
   };
@@ -45,7 +45,7 @@ function App() {
     setAlert({ show, type, msg });
   };
   const removeItem = (id) => {
-    showAlert(true, `1 Item has been removed from the list`, "danger");
+    showAlert(true, `1 Task has been removed from the list`, "danger");
     const newUpdateList = list.filter((item) => item.id !== id);
     setList(newUpdateList);
   };
@@ -70,7 +70,7 @@ function App() {
             value={name}
             className="grocery"
             type="text"
-            placeholder="eg : tomato"
+            placeholder="eg : file upload feature in profile section"
           />
           <button type="submit" className="submit-btn">
             {isEditing ? "Edit" : "Add"}
@@ -83,7 +83,7 @@ function App() {
           <button
             onClick={() => {
               setList([]);
-              showAlert(true, "All Items are cleared", "success");
+              showAlert(true, "All Tasks are cleared", "success");
             }}
             className="clear-btn"
           >
