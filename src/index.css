@@ -299,6 +299,14 @@ Grocery List
     letter-spacing: 2px;
     transition: var(--transition);
 }
+.completed {
+    margin-bottom: 0;
+    color: green;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+}
+    
 
 .edit-btn,
 .delete-btn {
@@ -325,6 +333,7 @@ Grocery List
 .delete-btn:hover {
     color: var(--clr-red-dark);
 }
+
 
 .clear-btn {
     text-transform: capitalize;
