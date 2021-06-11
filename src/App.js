@@ -15,7 +15,7 @@ function App() {
   const [isEditing, setisEditing] = useState(false);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
   const [editId, setEditId] = useState(null);
-  const [status, setStatus] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || name.length === 0) {
@@ -35,7 +35,7 @@ function App() {
       setEditId(null);
       showAlert(true, "Items has been Upadated", "success");
     } else {
-      let newItem = { id: new Date().getTime().toString(), title: name };
+      let newItem = { id: new Date().getTime().toString(), title: name ,status:false };
       setList([...list, newItem]);
       showAlert(true, "Item has been Added", "success");
       setName("");
@@ -58,7 +58,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
-  return (
+  return (      
     <section className="section-center">
       <h4>Do you keep forgetting your things to do? Note here</h4>
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -79,7 +79,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List setStaus={setStaus} status={status} list={list} removeItem={removeItem} editItem={editItem} />
+          <List  setList={setList} list={list} removeItem={removeItem} editItem={editItem} />
           <button
             onClick={() => {
               setList([]);

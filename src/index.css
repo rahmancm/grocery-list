@@ -299,13 +299,8 @@ Grocery List
     letter-spacing: 2px;
     transition: var(--transition);
 }
-.completed {
-    margin-bottom: 0;
-    color: green;
-    letter-spacing: 2px;
-    transition: var(--transition);
-}
-}
+
+
     
 
 .edit-btn,
@@ -364,8 +359,8 @@ Grocery List
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 30px;
+  height: 15px;
 }
 
 .switch input { 
@@ -389,8 +384,8 @@ Grocery List
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
