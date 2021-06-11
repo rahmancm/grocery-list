@@ -60,10 +60,10 @@ function App() {
   }, [list]);
   return (
     <section className="section-center">
-      <h4>Do you keep forgetting your grocery list ? Add here</h4>
+      <h4>Do you keep forgetting your things to do? Note here</h4>
       <form className="grocery-form" onSubmit={handleSubmit}>
         {alert.show && <Alert list={list} {...alert} removeAlert={showAlert} />}
-        <h3>Grocery List</h3>
+        <h3>Task List</h3>
         <div className="form-control">
           <input
             onChange={(e) => setName(e.target.value)}
@@ -79,7 +79,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List setStaus={setStaus} list={list} removeItem={removeItem} editItem={editItem} />
+          <List setStaus={setStaus} status={status} list={list} removeItem={removeItem} editItem={editItem} />
           <button
             onClick={() => {
               setList([]);
